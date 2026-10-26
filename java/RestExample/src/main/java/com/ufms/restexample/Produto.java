@@ -4,10 +4,13 @@
  */
 package com.ufms.restexample;
 
+import jakarta.enterprise.context.ApplicationScoped;
+
 /**
  *
  * @author max
  */
+@ApplicationScoped
 public class Produto {
     private String nome;
     private double preco;
@@ -21,10 +24,17 @@ public class Produto {
         this.preco = preco;
     }
 
-    // Getters e Setters (Obrigatórios)
-    public String getNome() { return nome; }
-    public void setNome(String nome) { this.nome = nome; }
-    public double getPreco() { return preco; }
-    public void setPreco(double preco) { this.preco = preco; }
+    public String getNome() { 
+        return nome; 
+    }
+    public synchronized void setNome(String nome){ 
+        this.nome = nome; 
+    }
+    public double getPreco() { 
+        return preco; 
+    }
+    public synchronized void setPreco(double preco){ 
+        this.preco = preco; 
+    }
     
 }
