@@ -19,7 +19,7 @@ public class RMIClient {
 
     public static void main(String[] args) {
         try {
-            Registry reg = LocateRegistry.getRegistry("localhost", 1099);
+            Registry reg = LocateRegistry.getRegistry("10.0.2.15", 1099);
             
             EstoqueInterface estoque = (EstoqueInterface) reg.lookup("EstoqueService");
             

@@ -37,6 +37,7 @@ public class RMIServer extends UnicastRemoteObject implements EstoqueInterface {
     
     public static void main(String[] args) {
         try {
+            System.setProperty("java.rmi.server.hostname", "10.0.2.15");
             RMIServer server = new RMIServer();
             
             Registry reg = LocateRegistry.createRegistry(1099);
